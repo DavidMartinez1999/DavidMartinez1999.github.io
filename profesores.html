@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maestros - Institución Educativa Patio Bonito</title>
+    <link rel="stylesheet" href="Estilo.css">
+    <style>
+        /* Estilo base para Maestros */
+        .news-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .news-container h2 {
+            color: #007bff;
+            text-align: center;
+            width: 100%;
+            margin-top: 0;
+            font-size: 33px;
+        }
+
+        .news-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(45% - 20px); /* Ajusta el ancho del contenedor */
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .news-item p {
+            margin: 10px 0 0 0;
+            line-height: 1.6;
+        }
+
+        .news-item .description {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-align: justify;
+        }
+
+        .news-item .more {
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            margin: 10% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section id="maestros" class="content-section">
+            <div class="news-container">
+                <h2>Maestros</h2>
+                <div class="news-item">
+                    <img src="maestro1.jpg" alt="Foto del maestro 1">
+                    <div class="teacher-info">
+                        <h3>Elsa Solano Perez</h3>
+                        <p>Área Encargada: Lengua Castellena</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro2.jpg" alt="Foto del maestro 2">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro3.jpg" alt="Foto del maestro 3">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro4.jpg" alt="Foto del maestro 4">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro5.jpg" alt="Foto del maestro 5">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro6.jpg" alt="Foto del maestro 6">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro7.jpg" alt="Foto del maestro 7">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro8.jpg" alt="Foto del maestro 8">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro9.jpg" alt="Foto del maestro 9">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro10.jpg" alt="Foto del maestro 10">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro11.jpg" alt="Foto del maestro 11">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro12.jpg" alt="Foto del maestro 12">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro13.jpg" alt="Foto del maestro 13">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro14.jpg" alt="Foto del maestro 14">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro15.jpg" alt="Foto del maestro 15">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro16.jpg" alt="Foto del maestro 16">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro17.jpg" alt="Foto del maestro 17">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro18.jpg" alt="Foto del maestro 18">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro19.jpg" alt="Foto del maestro 19">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro20.jpg" alt="Foto del maestro 20">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro21.jpg" alt="Foto del maestro 21">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro22.jpg" alt="Foto del maestro 22">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro23.jpg" alt="Foto del maestro 23">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 3</h3>
+                        <p>Área Encargada: Historia</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro24.jpg" alt="Foto del maestro 24">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 4</h3>
+                        <p>Área Encargada: Lengua</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro25.jpg" alt="Foto del maestro 25">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 1</h3>
+                        <p>Área Encargada: Matemáticas</p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <img src="maestro26.jpg" alt="Foto del maestro 26">
+                    <div class="teacher-info">
+                        <h3>Nombre del Maestro 2</h3>
+                        <p>Área Encargada: Ciencias</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contenido" class="content-section">
+            <!-- Contenido dinámico cargado aquí -->
+        </section>
+    </main>
+</body>
+</html>
+
+
+

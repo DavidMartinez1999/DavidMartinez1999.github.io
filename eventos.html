@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        /* Estilo base para Noticias y Eventos */
+.news-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-container h2 {
+    color: #007bff;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+    font-size: 33px;
+}
+
+.news-item {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(45% - 20px); /* Ajusta el ancho del contenedor */
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.news-item p {
+    margin: 10px 0 0 0;
+    line-height: 1.6;
+}
+
+.news-item .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+}
+
+.news-item .more {
+    color: #007bff;
+    cursor: pointer;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: 10% auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <section id="Eventos" class="content-section">
+            <div class="news-container">
+                <h2>---EVENTOS---</h2>
+                <div class="news-item">
+                    <img src="eventos/1.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/2.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/3.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/4.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/5.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/6.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/7.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/8.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/9.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/10.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/11.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/12.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/13.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/14.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/15.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/16.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/17.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/18.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/19.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/20.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/21.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/22.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/23.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/24.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/25.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/26.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/27.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/28.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/29.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/30.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/31.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/32.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/33.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/34.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/35.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/36.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/37.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/38.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/39.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/40.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/41.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/42.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/43.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/44.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/45.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/46.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/47.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/48.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/49.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/50.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/51.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/52.jpg" alt="Evento 2" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 2. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+                <div class="news-item">
+                    <img src="eventos/53.jpg" alt="Evento 1" onclick="openModal(this.src)">
+                    <p class="description">Descripción del evento 1. Este es un texto de ejemplo que puede ser más largo.</p>
+                    <span class="more" onclick="toggleDescription(this)">Ver más</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contenido" class="content-section">
+            <!-- Contenido dinámico cargado aquí -->
+        </section>
+    </main>
+</body>
+</html>

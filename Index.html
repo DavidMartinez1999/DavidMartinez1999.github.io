@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web Educativa</title>
+    <link rel="stylesheet" href="Estilo.css"> 
+    <script src="scripts.js" defer></script>
+    <style>
+         .institution-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .institution-content {
+            width: 100%;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .institution-content h2 {
+            color: #007bff;
+            text-align: center;
+            font-size: 33px;
+        }
+
+        .institution-content p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .institution-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .institution-images img {
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="Patio Bonito.png" alt="Imagen de la Institución Educativa Patio Bonito" class="header-image">
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#Inicio" onclick="mostrarContenido('inicio', 'inicio.html')">Inicio</a></li>
+            <li>
+                <a href="#Nuestra-institucion" onclick="mostrarContenido('nuestra-institucion', 'nuestra-institucion.html')">Nuestra institución</a>
+                <ul>
+                    <li><a href="#Mision" onclick="mostrarContenido('mision', 'mision.html')">Misión</a></li>
+                    <li><a href="#Vision" onclick="mostrarContenido('vision', 'vision.html')">Visión</a></li>
+                    <li><a href="#Identidad" onclick="mostrarContenido('identidad', 'identidad.html')">Identidad</a></li>
+                    <li><a href="#Profesores" onclick="mostrarContenido('profesores', 'profesores.html')">Profesores</a></li>
+                    <li><a href="#Administrativos" onclick="mostrarContenido('administrativos', 'administrativos.html')">Personal Administrativo</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="Eventos">Eventos</a>
+                <ul>
+                    <li><a href="#Eventos" onclick="mostrarContenido('Eventos','eventos.html')">Eventos</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#Programas-Academicos" onclick="mostrarContenido('programas-academicos', 'programas-academicos.html')">Programas Académicos</a>
+                <ul>
+                    <li><a href="#Programas-Estudios" onclick="mostrarContenido('programas-estudios', 'programas-estudios.html')">Programas de Estudios</a></li>
+                    <li><a href="#Actividades-Extracurriculares" onclick="mostrarContenido('actividades-extracurriculares', 'actividades-extracurriculares.html')">Actividades Extracurriculares</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#Galeria" onclick="mostrarContenido('galeria', 'Galeria.html')">Galería</a>
+            </li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="content-section">
+            <div class="slideshow-container">
+                <div class="slides">
+                    <div class="mySlides">
+                        <img src="Carrusel/Imagen1.jpg" style="width:100%; height:450px;">
+                    </div>
+                    <div class="mySlides">
+                        <img src="Carrusel/Imagen2.jpg" style="width:100%; height:450px;">
+                    </div>
+                    <div class="mySlides">
+                        <img src="Carrusel/imagen3.jpg" style="width:100%; height:450px;">
+                    </div>
+                    <!-- Agrega más diapositivas según sea necesario -->
+                </div>
+            </div>
+    
+            <div class="institution-container">
+                <div class="institution-content">
+                    <h2>---NUESTRA INSTITUCIÓN---</h2>
+                    <p>
+                        La razón fundamental de nuestra existencia en la Institución Educativa Patio Bonito es el bienestar y desarrollo integral de nuestros estudiantes. Nos dedicamos con total compromiso a brindar una capacitación continua y de alta calidad a nuestros docentes y directivos docentes para asegurar que estemos preparados y actualizados para guiar a los estudiantes en su viaje educativo.
+                    </p>
+                    <p> 
+                        Te invitamos a descubrir la rica historia de nuestra institución, explorar los valores que nos impulsan y comprender la misión que nos motiva diariamente en nuestra labor educativa. Todo esto tiene un propósito claro: ofrecer a los estudiantes no solo una educación académica excepcional, sino también apoyar su crecimiento personal en un entorno enriquecedor.
+                    </p>
+                    <p>
+                        En la Institución Educativa Patio Bonito, cada esfuerzo de capacitación y cada decisión que tomamos están centrados en proporcionar a nuestros estudiantes una experiencia educativa que no solo los prepare para el futuro académico, sino que también los empodere como individuos. Nuestra meta es ser la opción ideal para el desarrollo integral de cada estudiante, ayudándolos a alcanzar su máximo potencial. ¡Bienvenido a una comunidad educativa donde los estudiantes son nuestra razón de ser!
+                    </p>
+                    <div class="institution-images">
+                        <img src="Escudo.jpeg" style="width:550px; height:450px;">
+                        <img src="Bandera.jpeg" style="width:550px; height:450px;">
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15780.645721440516!2d-75.7190418!3d8.5804728!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e5a356a50971b9d%3A0x176992fd3c4c109!2sColegio%20Patio%20Bonito!5e0!3m2!1ses-419!2sco!4v1716047916598!5m2!1ses-419!2sco"width="900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+        
+            <section id="contenido" class="content-section">
+                <!-- Contenido dinámico cargado aquí -->
+            </section>
+        </main>
+                </div>
+            </div>
+        </section>
+    
+        <section id="contenido" class="content-section">
+            <!-- Contenido dinámico cargado aquí -->
+        </section>
+    </main>
+</body>
+</html>
+
+
